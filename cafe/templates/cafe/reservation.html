@@ -1,0 +1,78 @@
+{% extends 'cafe/base.html' %}
+{% load static %}
+{% block title %} صفحه{% endblock %}
+
+    
+    <body class="reservation-page">
+         
+            <main>
+                {% block comment %}  
+                
+                <section class="booking-section section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12 mx-auto">
+                            <div class="booking-form-wrap">
+                                <div class="row">
+                                    <div class="col-lg-7 col-12 p-0">
+                                        <form class="custom-form booking-form" action="#" method="post" role="form">
+                                            {% csrf_token %}
+                                            <div class="text-center mb-4 pb-lg-2">
+                                                <em class="text-white">لطفا فرم زیر را تکمیل کنید</em>
+
+                                                <h2 class="text-white">رزرو یک میز</h2>
+                                            </div>
+                                            
+                                            <div class="booking-form-body">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-12">
+                                                        <input type="text" name="name" id="booking-form-name" class="form-control" placeholder="نام و نام خانوادگی" required>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-12">
+                                                        <input type="tel" class="form-control" name="phone" placeholder="تلفن"  required="">
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-12">
+                                                        <input class="form-control" type="time" name="time" value="18:30">
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-12">
+                                                        <input type="date" name="date" id="booking-form-date" class="form-control" placeholder="تاریخ" required="">
+                                                    </div>
+
+                                                    <div class="col-lg-12 col-12">
+                                                        <input type="number" name="number" id="booking-form-number" class="form-control" placeholder="تعداد افراد" required="">
+
+                                                        <textarea name="message" rows="3" class="form-control" id="booking-form-message" placeholder="توضیحات"></textarea>
+                                                    </div>
+
+                                                    <div class="col-lg-4 col-md-10 col-8 mx-auto mt-2">
+                                                        <button type="submit" class="form-control">سفارش</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="col-lg-5 col-12 p-0">
+                                        <div class="booking-form-image-wrap">
+                                            
+                                            <img src="{% static 'images/barman-with-fruits.jpg'%}" class="booking-form-image img-fluid" alt="">
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+
+                {% endblock %} 
+            </main>
+
+
+       
+
